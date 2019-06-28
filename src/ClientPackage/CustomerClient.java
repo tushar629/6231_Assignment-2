@@ -1,20 +1,21 @@
-package Client;
+package ClientPackage;
 
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Properties;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import java.util.regex.Pattern;
 
-import Montreal_Server.Montreal_Interface;
-import Ottawa_Server.Ottawa_Interface;
-import Toronto_Server.Toronto_Interface;
+import org.omg.CORBA.ORB;
+import org.omg.CosNaming.NamingContextExt;
+import org.omg.CosNaming.NamingContextExtHelper;
+
+import _ServerPackage.Common_Inteface;
+import _ServerPackage.Common_IntefaceHelper;
 
 /**
  * The Class CustomerClient.
@@ -30,6 +31,11 @@ public class CustomerClient {
 	/** The login info. */
 	public static HashMap<String, String> login_info = new HashMap<String, String>();
 
+	static Common_Inteface montreal_obj;
+	static Common_Inteface ottawa_obj;
+	static Common_Inteface toronto_obj;
+
+	
 	/**
 	 * The main method.
 	 *
@@ -39,14 +45,21 @@ public class CustomerClient {
 	@SuppressWarnings("resource")
 	public static void main(String args[]) throws Exception {
 
-		Registry registry_montreal = LocateRegistry.getRegistry(6968);
-		Registry registry_ottawa = LocateRegistry.getRegistry(8085);
-		Registry registry_toronto = LocateRegistry.getRegistry(4200);
+	
+		Properties props = new Properties();
+		props.put("org.omg.CORBA.ORBInitialPort", "1050");
+		props.put("org.omg.CORBA.ORBInitialHost", "localhost");
+		ORB orb = ORB.init(args, props);
 
-		Montreal_Interface montreal_obj = (Montreal_Interface) registry_montreal.lookup("MTL");
-		Ottawa_Interface ottawa_obj = (Ottawa_Interface) registry_ottawa.lookup("OTW");
-		Toronto_Interface toronto_obj = (Toronto_Interface) registry_toronto.lookup("TOR");
+		// CORBA related work
+		// ORB orb = ORB.init(args, null);
+		org.omg.CORBA.Object objRef = orb.resolve_initial_references("NameService");
+		NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef);
+		montreal_obj = Common_IntefaceHelper.narrow(ncRef.resolve_str("MTL"));
+		ottawa_obj = Common_IntefaceHelper.narrow(ncRef.resolve_str("OTW"));
+		toronto_obj = Common_IntefaceHelper.narrow(ncRef.resolve_str("TOR"));
 
+		
 		Scanner input = new Scanner(System.in);
 
 		String user_ID = null;
@@ -153,50 +166,51 @@ public class CustomerClient {
 				if (matches_montreal) {
 					logger.info("Request: Booking Schedule ");
 					logger.info("Parameter: student ID: " + customerID);
-					ArrayList<String> list = montreal_obj.getBookingSchedule(customerID);
-					if (list.get(0).equalsIgnoreCase("The customerID entered is not in our records.")) {
+					String list = montreal_obj.getBookingSchedule(customerID);
+					String strArray[] = list.split(",");
+
+					if (strArray[0].equalsIgnoreCase("The customerID entered is not in our records.")) {
 						System.out.println("You have entered as a client ");
 						user_ID = input.nextLine();
 						customerID = user_ID;
 						logger.info("entered as a client with ID" + customerID);
 					} else {
-						for (String details : list) {
-							System.out.println(details);
-						}
-						logger.info("Reply:" + list.toString());
+							System.out.println(list);
+						
+						logger.info("Reply:" + list);
 					}
 
 				} else if (matches_ottawa) {
 					logger.info("Request: Booking Schedule ");
 					logger.info("Parameter: student ID: " + customerID);
+					String list = ottawa_obj.getBookingSchedule(customerID);
+					String strArray[] = list.split(",");
 
-					ArrayList<String> list = ottawa_obj.getBookingSchedule(customerID);
-					if (list.get(0).equalsIgnoreCase("The customerID entered is not in our records.")) {
+					if (strArray[0].equalsIgnoreCase("The customerID entered is not in our records.")) {
 						System.out.println("You have entered as a client ");
 						user_ID = input.nextLine();
 						customerID = user_ID;
 						logger.info("entered as a client with ID" + customerID);
 					} else {
-						for (String details : list) {
-							System.out.println(details);
-						}
-						logger.info("Reply:" + list.toString());
+						System.out.println(list);
+						
+						logger.info("Reply:" + list);
 					}
 
 				} else if (matches_toronto) {
 					logger.info("Request: Booking Schedule ");
 					logger.info("Parameter: student ID: " + customerID);
-					ArrayList<String> list = toronto_obj.getBookingSchedule(customerID);
-					if (list.get(0).equalsIgnoreCase("The customerID entered is not in our records.")) {
+					String list = toronto_obj.getBookingSchedule(customerID);
+					String strArray[] = list.split(",");
+
+					if (strArray[0].equalsIgnoreCase("The customerID entered is not in our records.")) {
 						System.out.println("You have entered as a client ");
 						user_ID = input.nextLine();
 						customerID = user_ID;
 						logger.info("entered as a client with ID" + customerID);
 					} else {
-						for (String details : list) {
-							System.out.println(details);
-						}
-						logger.info("Reply:" + list.toString());
+							System.out.println(list);
+						logger.info("Reply:" + list);
 					}
 
 				}

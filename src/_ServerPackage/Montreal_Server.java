@@ -1,16 +1,21 @@
-package Montreal_Server;
+package _ServerPackage;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.InetAddress;
 import java.net.SocketException;
 import java.nio.file.Paths;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
+import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+
+import org.omg.CORBA.ORB;
+import org.omg.CosNaming.NameComponent;
+import org.omg.CosNaming.NamingContextExt;
+import org.omg.CosNaming.NamingContextExtHelper;
+import org.omg.PortableServer.POA;
+
 
 /**
  * The Class Montreal_Server.
@@ -78,22 +83,7 @@ public class Montreal_Server {
 	 */
 	public static void main(String args[]) throws Exception {
 
-		Runnable taskUDP = () -> {
-
-			try {
-				serverReceive();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		};
-
-		new Thread(taskUDP).start();
-
 		Montreal_Class stub1 = new Montreal_Class();
-		Registry registry_montreal = LocateRegistry.createRegistry(6968);
-		registry_montreal.rebind("MTL", stub1);
 
 		System.out.println(" Montreal server has been started");
 		try {
@@ -115,6 +105,56 @@ public class Montreal_Server {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		
+		Runnable taskUDP = () -> {
+
+			try {
+				serverReceive();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		};
+
+		new Thread(taskUDP).start();
+
+		System.out.println("Application Terminating ...");
+		// properties value to help the ORB
+		Properties props = new Properties();
+		props.put("org.omg.CORBA.ORBInitialPort", "1050");
+		props.put("org.omg.CORBA.ORBInitialHost", "localhost");
+		/// ORB orb2 = ORB.init(args, props);
+
+		// create and initialize the ORB
+		ORB orb = ORB.init(args, props);
+		// ORB orb = ORB.init(args, null);
+		// get reference to rootpoa & activate the POAManager
+		POA rootpoa = (POA) orb.resolve_initial_references("RootPOA");
+		rootpoa.the_POAManager().activate();
+		// create servant and register it with the ORB
+
+		stub1.setORB(orb);
+		// get object reference from the servant
+		org.omg.CORBA.Object ref = rootpoa.servant_to_reference(stub1);
+		// and cast the reference to a CORBA reference
+		Common_Inteface href = Common_IntefaceHelper.narrow(ref);
+
+		// get the root naming context
+		// NameService invokes the transient name service
+		org.omg.CORBA.Object objRef = orb.resolve_initial_references("NameService");
+		// Use NamingContextExt, which is part of the
+		// Interoperable Naming Service (INS) specification.
+		NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef);
+		// bind the Object Reference in Naming
+		String name = "MTL";
+		NameComponent path[] = ncRef.to_name(name);
+		ncRef.rebind(path, href);
+		System.out.println("Montreal Serevr ready and listening ...  ...");
+		// wait for invocations from clients
+		orb.run();
+
 
 	}
 

@@ -90,3 +90,9 @@ Jun 28, 2019 2:04:32 PM Montreal_Server.Montreal_Server main
 INFO: Inside the Montreal Server
 Jun 28, 2019 2:08:01 PM Montreal_Server.Montreal_Server main
 INFO: Inside the Montreal Server
+Jun 28, 2019 5:53:40 PM _ServerPackage.Montreal_Server main
+INFO: Inside the Montreal Server
+Jun 28, 2019 5:53:40 PM _ServerPackage.Montreal_Class initialize
+INFO: Initilize Implementations 
+Jun 28, 2019 5:53:40 PM _ServerPackage.Montreal_Class initialize
+INFO: Server is initilized.

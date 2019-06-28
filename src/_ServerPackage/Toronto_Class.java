@@ -1,4 +1,4 @@
-package Toronto_Server;
+package _ServerPackage;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,14 +22,24 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
+import org.omg.CORBA.ORB;
+
 /**
  * The Class Toronto_Class.
  */
-public class Toronto_Class extends UnicastRemoteObject implements Toronto_Interface {
+public class Toronto_Class extends Common_IntefacePOA{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	private ORB orb;
+
+	public void setORB(ORB orb_val) {
+		orb = orb_val;
+
+	}
+
+	
 	/**
 	 * Instantiates a new toronto class.
 	 *
@@ -207,7 +217,7 @@ public class Toronto_Class extends UnicastRemoteObject implements Toronto_Interf
 	 * 
 	 * @see Toronto_Server.Toronto_Interface#getBookingSchedule(java.lang.String)
 	 */
-	public ArrayList<String> getBookingSchedule(String customerID) {
+	public String getBookingSchedule(String customerID) {
 		ArrayList<String> buff = new ArrayList<String>();
 
 		if (client_Toronto_info.containsKey(customerID)) {
@@ -246,7 +256,7 @@ public class Toronto_Class extends UnicastRemoteObject implements Toronto_Interf
 			buff.add("------>  The customerID entered is not in our records.");
 		}
 
-		return buff;
+		return buff.toString();
 
 	}
 
@@ -687,7 +697,7 @@ public class Toronto_Class extends UnicastRemoteObject implements Toronto_Interf
 	 * 
 	 * @see Toronto_Server.Toronto_Interface#listEventAvailability(java.lang.String)
 	 */
-	public ArrayList<String> listEventAvailability(String eventType) {
+	public String listEventAvailability(String eventType) {
 
 		ArrayList<String> buff = new ArrayList<String>();
 		if (Toronto_hashmap.containsKey(eventType)) {
@@ -736,7 +746,7 @@ public class Toronto_Class extends UnicastRemoteObject implements Toronto_Interf
 			}
 		}		
 
-		return buff;
+		return buff.toString();
 
 	}
 

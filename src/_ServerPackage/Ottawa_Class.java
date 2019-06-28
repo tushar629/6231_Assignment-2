@@ -1,4 +1,4 @@
-package Ottawa_Server;
+package _ServerPackage;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,14 +22,24 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
+import org.omg.CORBA.ORB;
+
 /**
  * The Class Ottawa_Class.
  */
-public class Ottawa_Class extends UnicastRemoteObject implements Ottawa_Interface {
+public class Ottawa_Class extends Common_IntefacePOA{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	private ORB orb;
+
+	public void setORB(ORB orb_val) {
+		orb = orb_val;
+
+	}
+
+	
 	/**
 	 * Instantiates a new ottawa class.
 	 *
@@ -217,7 +227,7 @@ public class Ottawa_Class extends UnicastRemoteObject implements Ottawa_Interfac
 	 * 
 	 * @see Ottawa_Server.Ottawa_Interface#getBookingSchedule(java.lang.String)
 	 */
-	public ArrayList<String> getBookingSchedule(String customerID) {
+	public String getBookingSchedule(String customerID) {
 
 		ArrayList<String> buff = new ArrayList<String>();
 
@@ -257,7 +267,7 @@ public class Ottawa_Class extends UnicastRemoteObject implements Ottawa_Interfac
 			buff.add("------>  The customerID entered is not in our records.");
 		}
 
-		return buff;
+		return buff.toString();
 
 	}
 
@@ -671,7 +681,7 @@ public class Ottawa_Class extends UnicastRemoteObject implements Ottawa_Interfac
 	 * 
 	 * @see Ottawa_Server.Ottawa_Interface#listEventAvailability(java.lang.String)
 	 */
-	public ArrayList<String> listEventAvailability(String eventType) {
+	public String listEventAvailability(String eventType) {
 
 		ArrayList<String> buff = new ArrayList<String>();
 		if (Ottawa_hashmap.containsKey(eventType)) {
@@ -720,7 +730,7 @@ public class Ottawa_Class extends UnicastRemoteObject implements Ottawa_Interfac
 			}
 		}		
 
-		return buff;
+		return buff.toString();
 
 	}
 

@@ -1,4 +1,4 @@
-module ServerWork
+module ServerPackage
 {
   interface Common_Inteface
   {
