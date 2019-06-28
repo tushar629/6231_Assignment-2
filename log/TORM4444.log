@@ -1,0 +1,10 @@
+Jun 15, 2019 6:23:37 PM Client.EventManagerClient main
+INFO: User id entered is TORM4444
+Jun 15, 2019 6:23:37 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM4444
+Jun 15, 2019 6:23:45 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 15, 2019 6:23:45 PM Client.EventManagerClient main
+INFO: Parameter:Seminar
+Jun 15, 2019 6:23:45 PM Client.EventManagerClient main
+INFO: Reply [There are no Seminars scheduled., No events, MTLA080619 1]

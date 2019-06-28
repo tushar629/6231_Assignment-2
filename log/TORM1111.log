@@ -1,0 +1,234 @@
+Jun 06, 2019 10:57:45 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 06, 2019 10:57:45 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 06, 2019 10:59:57 PM Client.EventManagerClient main
+INFO: Request: Add course for client by manager 
+Jun 06, 2019 11:00:13 PM Client.EventManagerClient main
+INFO: Parameters :TORA123456 Seminar 40
+Jun 06, 2019 11:00:13 PM Client.EventManagerClient main
+INFO: Reply event with this eventID and eventType already existed so booking capacity updated.
+Jun 06, 2019 11:26:43 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 06, 2019 11:26:43 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 06, 2019 11:28:02 PM Client.EventManagerClient main
+INFO: Request to ottawa book event 
+Jun 06, 2019 11:28:02 PM Client.EventManagerClient main
+INFO: Parameters passed are customerID OTWC1111 eventID OTWA070619 and eventtypeSeminar
+Jun 06, 2019 11:28:02 PM Client.EventManagerClient main
+INFO: Reply Customer is already booked for this event
+Jun 06, 2019 11:28:22 PM Client.EventManagerClient main
+INFO: Request: Booking Schedule 
+Jun 06, 2019 11:28:22 PM Client.EventManagerClient main
+INFO: Parameter: student ID: OTWC1111
+Jun 06, 2019 11:28:22 PM Client.EventManagerClient main
+INFO: Reply:[Following is the booking schedule for the customer, Conferences-, 3, OTWE100519, OTWM200619, TORE100519, Seminars-, 3, OTWE100519, TORA100519, OTWA070619, Trade Shows-, 1, OTWM100519]
+Jun 06, 2019 11:29:02 PM Client.EventManagerClient main
+INFO: Request: Add course from manager 
+Jun 06, 2019 11:29:02 PM Client.EventManagerClient main
+INFO: Parameters :OTWA070619 Seminar
+Jun 06, 2019 11:29:02 PM Client.EventManagerClient main
+INFO: Reply The event with eventID you wanted to remove does not exist.
+Jun 21, 2019 6:55:30 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 21, 2019 6:55:30 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 21, 2019 6:55:46 PM Client.EventManagerClient main
+INFO: Request: Booking Schedule 
+Jun 21, 2019 6:55:46 PM Client.EventManagerClient main
+INFO: Parameter: student ID: MTLC1111
+Jun 21, 2019 6:55:46 PM Client.EventManagerClient main
+INFO: Reply:[------>  Following is the booking schedule for the customer, Conferences-, 0, Seminars-, 0, Trade Shows-, 0]
+Jun 21, 2019 6:59:51 PM Client.EventManagerClient main
+INFO: Request: Booking Schedule 
+Jun 21, 2019 6:59:51 PM Client.EventManagerClient main
+INFO: Parameter: student ID: OTWC1111
+Jun 21, 2019 6:59:51 PM Client.EventManagerClient main
+INFO: Reply:[Following is the booking schedule for the customer, Conferences-, 0, Seminars-, 0, Trade Shows-, 0]
+Jun 27, 2019 6:52:53 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 27, 2019 6:52:53 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 27, 2019 6:52:57 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 27, 2019 6:52:57 PM Client.EventManagerClient main
+INFO: Parameter:Seminar
+Jun 27, 2019 6:52:57 PM Client.EventManagerClient main
+INFO: Reply []
+Jun 27, 2019 7:02:42 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 27, 2019 7:02:42 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 27, 2019 7:02:48 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 27, 2019 7:02:48 PM Client.EventManagerClient main
+INFO: Parameter:Seminar
+Jun 27, 2019 7:02:48 PM Client.EventManagerClient main
+INFO: Reply [MTLE230719 0]
+Jun 27, 2019 7:03:40 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 27, 2019 7:03:40 PM Client.EventManagerClient main
+INFO: Parameter:Conference
+Jun 27, 2019 7:03:40 PM Client.EventManagerClient main
+INFO: Reply [OTWE110619 0, OTWE080619 0, MTLA090619 1]
+Jun 27, 2019 7:03:56 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 27, 2019 7:03:56 PM Client.EventManagerClient main
+INFO: Parameter:TradeShow
+Jun 27, 2019 7:03:56 PM Client.EventManagerClient main
+INFO: Reply [MTLA080619 1]
+Jun 27, 2019 7:07:10 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 27, 2019 7:07:10 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 27, 2019 7:07:16 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 27, 2019 7:07:16 PM Client.EventManagerClient main
+INFO: Parameter:Conference
+Jun 27, 2019 7:07:16 PM Client.EventManagerClient main
+INFO: Reply [OTWE110619 1, OTWE080619 0, MTLA090619 1]
+Jun 27, 2019 7:07:46 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 27, 2019 7:07:46 PM Client.EventManagerClient main
+INFO: Parameter:Seminar
+Jun 27, 2019 7:07:46 PM Client.EventManagerClient main
+INFO: Reply [MTLE230719 0]
+Jun 27, 2019 7:08:24 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 27, 2019 7:08:24 PM Client.EventManagerClient main
+INFO: Parameter:TradeShow
+Jun 27, 2019 7:08:24 PM Client.EventManagerClient main
+INFO: Reply [MTLA080619 1]
+Jun 27, 2019 7:20:25 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 27, 2019 7:20:25 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 27, 2019 7:20:58 PM Client.EventManagerClient main
+INFO: Request: Remove event 
+Jun 27, 2019 7:20:58 PM Client.EventManagerClient main
+INFO: Parameter: event ID:MTLA090619, Student ID:TORC1111
+Jun 27, 2019 7:20:58 PM Client.EventManagerClient main
+INFO: Reply Customer has been removed from this event.
+Jun 27, 2019 7:30:59 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 27, 2019 7:30:59 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 27, 2019 7:31:25 PM Client.EventManagerClient main
+INFO: Request: Remove event 
+Jun 27, 2019 7:31:25 PM Client.EventManagerClient main
+INFO: Parameter: event ID:MTLA090619, Student ID:TORC1111
+Jun 27, 2019 7:35:03 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 27, 2019 7:35:03 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 27, 2019 7:35:32 PM Client.EventManagerClient main
+INFO: Request: Remove event 
+Jun 27, 2019 7:35:32 PM Client.EventManagerClient main
+INFO: Parameter: event ID:MTLA090619, Student ID:TORC1111
+Jun 27, 2019 7:35:32 PM Client.EventManagerClient main
+INFO: Reply Customer has been removed from this event.
+Jun 27, 2019 7:45:51 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 27, 2019 7:45:51 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 27, 2019 7:46:31 PM Client.EventManagerClient main
+INFO: Request: Remove event 
+Jun 27, 2019 7:46:31 PM Client.EventManagerClient main
+INFO: Parameter: event ID:MTLA090619, Student ID:TORC1111
+Jun 27, 2019 7:46:31 PM Client.EventManagerClient main
+INFO: Reply Customer has been removed from this event.
+Jun 28, 2019 3:43:15 AM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 28, 2019 3:43:15 AM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 28, 2019 3:43:23 AM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 28, 2019 3:43:23 AM Client.EventManagerClient main
+INFO: Parameter:Seminar
+Jun 28, 2019 3:43:23 AM Client.EventManagerClient main
+INFO: Reply []
+Jun 28, 2019 3:43:32 AM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 28, 2019 3:43:32 AM Client.EventManagerClient main
+INFO: Parameter:Conference
+Jun 28, 2019 3:43:32 AM Client.EventManagerClient main
+INFO: Reply []
+Jun 28, 2019 3:43:42 AM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 28, 2019 3:43:42 AM Client.EventManagerClient main
+INFO: Parameter:TradeShow
+Jun 28, 2019 3:43:42 AM Client.EventManagerClient main
+INFO: Reply []
+Jun 28, 2019 3:47:24 AM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 28, 2019 3:47:24 AM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 28, 2019 3:47:32 AM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 28, 2019 3:47:32 AM Client.EventManagerClient main
+INFO: Parameter:Conference
+Jun 28, 2019 3:47:32 AM Client.EventManagerClient main
+INFO: Reply [OTWE110619 1, OTWE080619 1, MTLA090619 2]
+Jun 28, 2019 3:47:56 AM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 28, 2019 3:47:56 AM Client.EventManagerClient main
+INFO: Parameter:Seminar
+Jun 28, 2019 3:47:56 AM Client.EventManagerClient main
+INFO: Reply [MTLE230719 1]
+Jun 28, 2019 3:48:17 AM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 28, 2019 3:48:17 AM Client.EventManagerClient main
+INFO: Parameter:TradeShow
+Jun 28, 2019 3:48:17 AM Client.EventManagerClient main
+INFO: Reply [MTLA080619 2]
+Jun 28, 2019 3:52:54 AM Client.EventManagerClient main
+INFO: Request: Remove event 
+Jun 28, 2019 3:52:54 AM Client.EventManagerClient main
+INFO: Parameter: event ID:MTLA090619, Student ID:TORC1111
+Jun 28, 2019 3:52:54 AM Client.EventManagerClient main
+INFO: Reply Customer has been removed from this event.
+Jun 28, 2019 2:04:39 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 28, 2019 2:04:39 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 28, 2019 2:04:50 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 28, 2019 2:04:50 PM Client.EventManagerClient main
+INFO: Parameter:Seminar
+Jun 28, 2019 2:04:50 PM Client.EventManagerClient main
+INFO: Reply [MTLE230719 0]
+Jun 28, 2019 2:05:02 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 28, 2019 2:05:02 PM Client.EventManagerClient main
+INFO: Parameter:TradeShow
+Jun 28, 2019 2:05:02 PM Client.EventManagerClient main
+INFO: Reply [MTLA080619 1]
+Jun 28, 2019 2:05:14 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 28, 2019 2:05:14 PM Client.EventManagerClient main
+INFO: Parameter:Conference
+Jun 28, 2019 2:05:14 PM Client.EventManagerClient main
+INFO: Reply [OTWE110619 1, OTWE080619 0, MTLA090619 1]
+Jun 28, 2019 2:05:27 PM Client.EventManagerClient main
+INFO: Request: Booking Schedule 
+Jun 28, 2019 2:05:27 PM Client.EventManagerClient main
+INFO: Parameter: student ID: TORC1111
+Jun 28, 2019 2:05:27 PM Client.EventManagerClient main
+INFO: Reply:[------>  Following is the booking schedule for the customer, Conferences-, 2, OTWE080619, MTLA090619, Seminars-, 1, MTLE230719, Trade Shows-, 1, MTLA080619]
+Jun 28, 2019 2:08:13 PM Client.EventManagerClient main
+INFO: User id entered is TORM1111
+Jun 28, 2019 2:08:13 PM Client.EventManagerClient main
+INFO: Entered as a Manager with IDTORM1111
+Jun 28, 2019 2:08:21 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 28, 2019 2:08:21 PM Client.EventManagerClient main
+INFO: Parameter:TradeShow
+Jun 28, 2019 2:08:21 PM Client.EventManagerClient main
+INFO: Reply [MTLA080619 1]
+Jun 28, 2019 2:08:31 PM Client.EventManagerClient main
+INFO: Request: list eventavailability req to Toronto server 
+Jun 28, 2019 2:08:31 PM Client.EventManagerClient main
+INFO: Parameter:Conference
+Jun 28, 2019 2:08:31 PM Client.EventManagerClient main
+INFO: Reply [OTWE110619 1, OTWE080619 0, MTLA090619 1]

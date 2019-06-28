@@ -1,0 +1,10 @@
+Jun 27, 2019 5:17:31 PM Client.CustomerClient main
+INFO: User id entered is TORC1234
+Jun 27, 2019 5:17:31 PM Client.CustomerClient main
+INFO: entered as a client with IDTORC1234
+Jun 27, 2019 5:17:34 PM Client.CustomerClient main
+INFO: Request: Booking Schedule 
+Jun 27, 2019 5:17:34 PM Client.CustomerClient main
+INFO: Parameter: student ID: TORC1234
+Jun 27, 2019 5:17:34 PM Client.CustomerClient main
+INFO: Reply:[------>  The customerID entered is not in our records.]
