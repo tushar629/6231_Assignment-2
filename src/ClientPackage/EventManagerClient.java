@@ -35,8 +35,13 @@ public class EventManagerClient {
 	/** The login info. */
 	public static HashMap<String, String> login_info = new HashMap<String, String>();
 
+	/** The montreal obj. */
 	static Common_Inteface montreal_obj;
+	
+	/** The ottawa obj. */
 	static Common_Inteface ottawa_obj;
+	
+	/** The toronto obj. */
 	static Common_Inteface toronto_obj;
 
 	

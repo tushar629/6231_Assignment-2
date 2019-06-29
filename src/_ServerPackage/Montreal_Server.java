@@ -120,7 +120,7 @@ public class Montreal_Server {
 
 		new Thread(taskUDP).start();
 
-		System.out.println("Application Terminating ...");
+//		System.out.println("Application Terminating ...");
 		// properties value to help the ORB
 		Properties props = new Properties();
 		props.put("org.omg.CORBA.ORBInitialPort", "1050");
@@ -129,8 +129,6 @@ public class Montreal_Server {
 
 		// create and initialize the ORB
 		ORB orb = ORB.init(args, props);
-		// ORB orb = ORB.init(args, null);
-		// get reference to rootpoa & activate the POAManager
 		POA rootpoa = (POA) orb.resolve_initial_references("RootPOA");
 		rootpoa.the_POAManager().activate();
 		// create servant and register it with the ORB

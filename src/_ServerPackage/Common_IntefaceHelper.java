@@ -10,8 +10,16 @@ package _ServerPackage;
 
 abstract public class Common_IntefaceHelper
 {
+  
+  /** The id. */
   private static String  _id = "IDL:ServerPackage/Common_Inteface:1.0";
 
+  /**
+	 * Insert.
+	 *
+	 * @param a    the a
+	 * @param that the that
+	 */
   public static void insert (org.omg.CORBA.Any a, _ServerPackage.Common_Inteface that)
   {
     org.omg.CORBA.portable.OutputStream out = a.create_output_stream ();
@@ -20,12 +28,25 @@ abstract public class Common_IntefaceHelper
     a.read_value (out.create_input_stream (), type ());
   }
 
+  /**
+	 * Extract.
+	 *
+	 * @param a the a
+	 * @return the server package. common inteface
+	 */
   public static _ServerPackage.Common_Inteface extract (org.omg.CORBA.Any a)
   {
     return read (a.create_input_stream ());
   }
 
+  /** The type code. */
   private static org.omg.CORBA.TypeCode __typeCode = null;
+  
+  /**
+	 * Type.
+	 *
+	 * @return the org.omg. CORB a. type code
+	 */
   synchronized public static org.omg.CORBA.TypeCode type ()
   {
     if (__typeCode == null)
@@ -35,21 +56,44 @@ abstract public class Common_IntefaceHelper
     return __typeCode;
   }
 
+  /**
+	 * Id.
+	 *
+	 * @return the string
+	 */
   public static String id ()
   {
     return _id;
   }
 
+  /**
+	 * Read.
+	 *
+	 * @param istream the istream
+	 * @return the server package. common inteface
+	 */
   public static _ServerPackage.Common_Inteface read (org.omg.CORBA.portable.InputStream istream)
   {
     return narrow (istream.read_Object (_Common_IntefaceStub.class));
   }
 
+  /**
+	 * Write.
+	 *
+	 * @param ostream the ostream
+	 * @param value   the value
+	 */
   public static void write (org.omg.CORBA.portable.OutputStream ostream, _ServerPackage.Common_Inteface value)
   {
     ostream.write_Object ((org.omg.CORBA.Object) value);
   }
 
+  /**
+	 * Narrow.
+	 *
+	 * @param obj the obj
+	 * @return the server package. common inteface
+	 */
   public static _ServerPackage.Common_Inteface narrow (org.omg.CORBA.Object obj)
   {
     if (obj == null)
@@ -67,6 +111,12 @@ abstract public class Common_IntefaceHelper
     }
   }
 
+  /**
+	 * Unchecked narrow.
+	 *
+	 * @param obj the obj
+	 * @return the server package. common inteface
+	 */
   public static _ServerPackage.Common_Inteface unchecked_narrow (org.omg.CORBA.Object obj)
   {
     if (obj == null)

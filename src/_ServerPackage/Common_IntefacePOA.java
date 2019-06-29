@@ -14,6 +14,7 @@ public abstract class Common_IntefacePOA extends org.omg.PortableServer.Servant
 
   // Constructors
 
+  /** The methods. */
   private static java.util.Hashtable _methods = new java.util.Hashtable ();
   static
   {
@@ -26,6 +27,9 @@ public abstract class Common_IntefacePOA extends org.omg.PortableServer.Servant
     _methods.put ("swapEvent", new java.lang.Integer (6));
   }
 
+  /* (non-Javadoc)
+   * @see org.omg.CORBA.portable.InvokeHandler#_invoke(java.lang.String, org.omg.CORBA.portable.InputStream, org.omg.CORBA.portable.ResponseHandler)
+   */
   public org.omg.CORBA.portable.OutputStream _invoke (String $method,
                                 org.omg.CORBA.portable.InputStream in,
                                 org.omg.CORBA.portable.ResponseHandler $rh)
@@ -125,21 +129,36 @@ public abstract class Common_IntefacePOA extends org.omg.PortableServer.Servant
     return out;
   } // _invoke
 
+  /** The ids. */
   // Type-specific CORBA::Object operations
   private static String[] __ids = {
     "IDL:ServerPackage/Common_Inteface:1.0"};
 
+  /* (non-Javadoc)
+   * @see org.omg.PortableServer.Servant#_all_interfaces(org.omg.PortableServer.POA, byte[])
+   */
   public String[] _all_interfaces (org.omg.PortableServer.POA poa, byte[] objectId)
   {
     return (String[])__ids.clone ();
   }
 
+  /**
+	 * This.
+	 *
+	 * @return the common inteface
+	 */
   public Common_Inteface _this() 
   {
     return Common_IntefaceHelper.narrow(
     super._this_object());
   }
 
+  /**
+	 * This.
+	 *
+	 * @param orb the orb
+	 * @return the common inteface
+	 */
   public Common_Inteface _this(org.omg.CORBA.ORB orb) 
   {
     return Common_IntefaceHelper.narrow(

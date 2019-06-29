@@ -11,6 +11,9 @@ package _ServerPackage;
 public class _Common_IntefaceStub extends org.omg.CORBA.portable.ObjectImpl implements _ServerPackage.Common_Inteface
 {
 
+  /* (non-Javadoc)
+   * @see _ServerPackage.Common_IntefaceOperations#getBookingSchedule(java.lang.String)
+   */
   public String getBookingSchedule (String customerID)
   {
             org.omg.CORBA.portable.InputStream $in = null;
@@ -31,6 +34,9 @@ public class _Common_IntefaceStub extends org.omg.CORBA.portable.ObjectImpl impl
             }
   } // getBookingSchedule
 
+  /* (non-Javadoc)
+   * @see _ServerPackage.Common_IntefaceOperations#bookEvent(java.lang.String, java.lang.String, java.lang.String)
+   */
   public String bookEvent (String customerID, String eventID, String eventType)
   {
             org.omg.CORBA.portable.InputStream $in = null;
@@ -53,6 +59,9 @@ public class _Common_IntefaceStub extends org.omg.CORBA.portable.ObjectImpl impl
             }
   } // bookEvent
 
+  /* (non-Javadoc)
+   * @see _ServerPackage.Common_IntefaceOperations#cancelEvent(java.lang.String, java.lang.String, java.lang.String)
+   */
   public String cancelEvent (String customerID, String eventID, String eventType)
   {
             org.omg.CORBA.portable.InputStream $in = null;
@@ -75,6 +84,9 @@ public class _Common_IntefaceStub extends org.omg.CORBA.portable.ObjectImpl impl
             }
   } // cancelEvent
 
+  /* (non-Javadoc)
+   * @see _ServerPackage.Common_IntefaceOperations#addEvent(java.lang.String, java.lang.String, java.lang.String)
+   */
   public String addEvent (String eventID, String eventType, String bookingCapacity)
   {
             org.omg.CORBA.portable.InputStream $in = null;
@@ -97,6 +109,9 @@ public class _Common_IntefaceStub extends org.omg.CORBA.portable.ObjectImpl impl
             }
   } // addEvent
 
+  /* (non-Javadoc)
+   * @see _ServerPackage.Common_IntefaceOperations#removeEvent(java.lang.String, java.lang.String)
+   */
   public String removeEvent (String eventID, String eventType)
   {
             org.omg.CORBA.portable.InputStream $in = null;
@@ -118,6 +133,9 @@ public class _Common_IntefaceStub extends org.omg.CORBA.portable.ObjectImpl impl
             }
   } // removeEvent
 
+  /* (non-Javadoc)
+   * @see _ServerPackage.Common_IntefaceOperations#listEventAvailability(java.lang.String)
+   */
   public String listEventAvailability (String eventType)
   {
             org.omg.CORBA.portable.InputStream $in = null;
@@ -138,6 +156,9 @@ public class _Common_IntefaceStub extends org.omg.CORBA.portable.ObjectImpl impl
             }
   } // listEventAvailability
 
+  /* (non-Javadoc)
+   * @see _ServerPackage.Common_IntefaceOperations#swapEvent(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+   */
   public String swapEvent (String customerID, String oldEventType, String oldEventID, String newEventType, String newEventID)
   {
             org.omg.CORBA.portable.InputStream $in = null;
@@ -162,15 +183,25 @@ public class _Common_IntefaceStub extends org.omg.CORBA.portable.ObjectImpl impl
             }
   } // swapEvent
 
+  /** The ids. */
   // Type-specific CORBA::Object operations
   private static String[] __ids = {
     "IDL:ServerPackage/Common_Inteface:1.0"};
 
+  /* (non-Javadoc)
+   * @see org.omg.CORBA.portable.ObjectImpl#_ids()
+   */
   public String[] _ids ()
   {
     return (String[])__ids.clone ();
   }
 
+  /**
+	 * Read object.
+	 *
+	 * @param s the s
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
   private void readObject (java.io.ObjectInputStream s) throws java.io.IOException
   {
      String str = s.readUTF ();
@@ -186,6 +217,12 @@ public class _Common_IntefaceStub extends org.omg.CORBA.portable.ObjectImpl impl
    }
   }
 
+  /**
+	 * Write object.
+	 *
+	 * @param s the s
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
   private void writeObject (java.io.ObjectOutputStream s) throws java.io.IOException
   {
      String[] args = null;

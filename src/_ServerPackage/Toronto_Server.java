@@ -122,16 +122,13 @@ public class Toronto_Server {
 			e.printStackTrace();
 		}
 
-		System.out.println("Application Terminating ...");
+//		System.out.println("Application Terminating ...");
 		// properties value to help the ORB
 		Properties props = new Properties();
 		props.put("org.omg.CORBA.ORBInitialPort", "1050");
 		props.put("org.omg.CORBA.ORBInitialHost", "localhost");
-		/// ORB orb2 = ORB.init(args, props);
-
-		// create and initialize the ORB
+			// create and initialize the ORB
 		ORB orb = ORB.init(args, props);
-		// ORB orb = ORB.init(args, null);
 		// get reference to rootpoa & activate the POAManager
 		POA rootpoa = (POA) orb.resolve_initial_references("RootPOA");
 		rootpoa.the_POAManager().activate();

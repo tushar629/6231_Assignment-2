@@ -31,8 +31,13 @@ public class CustomerClient {
 	/** The login info. */
 	public static HashMap<String, String> login_info = new HashMap<String, String>();
 
+	/** The montreal obj. */
 	static Common_Inteface montreal_obj;
+	
+	/** The ottawa obj. */
 	static Common_Inteface ottawa_obj;
+	
+	/** The toronto obj. */
 	static Common_Inteface toronto_obj;
 
 	
@@ -51,8 +56,7 @@ public class CustomerClient {
 		props.put("org.omg.CORBA.ORBInitialHost", "localhost");
 		ORB orb = ORB.init(args, props);
 
-		// CORBA related work
-		// ORB orb = ORB.init(args, null);
+		// CORBA work
 		org.omg.CORBA.Object objRef = orb.resolve_initial_references("NameService");
 		NamingContextExt ncRef = NamingContextExtHelper.narrow(objRef);
 		montreal_obj = Common_IntefaceHelper.narrow(ncRef.resolve_str("MTL"));

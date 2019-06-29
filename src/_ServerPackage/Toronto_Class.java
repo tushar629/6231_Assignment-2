@@ -32,8 +32,14 @@ public class Toronto_Class extends Common_IntefacePOA{
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The orb. */
 	private ORB orb;
 
+	/**
+	 * Sets the orb.
+	 *
+	 * @param orb_val the new orb
+	 */
 	public void setORB(ORB orb_val) {
 		orb = orb_val;
 
@@ -86,16 +92,28 @@ public class Toronto_Class extends Common_IntefacePOA{
 	/** The socket multi. */
 	public static DatagramSocket socket_multi = null;
 	
+	/** The socket multi 1. */
 	public static DatagramSocket socket_multi_1 = null;
 
+	/** The socket availability. */
 	public static DatagramSocket socket_availability = null;
 	
+	/** The socket availability 1. */
 	public static DatagramSocket socket_availability_1 = null;
 	
+	/** The flag 0. */
 	int flag0 = 0;
+	
+	/** The flag 1. */
 	int flag1 = 0;
+	
+	/** The flag 2. */
 	int flag2 = 0;
+	
+	/** The flag 3. */
 	int flag3 = 0;
+	
+	/** The flag 4. */
 	int flag4 = 0;
 
 
@@ -1010,8 +1028,6 @@ public class Toronto_Class extends Common_IntefacePOA{
 	 * @param eventType the event type
 	 * @param eventID   the event ID
 	 * @return the string
-	 * @throws InterruptedException the interrupted exception
-	 * @throws ExecutionException   the execution exception
 	 */
 	public void check_with_mtl(String eventType, String eventID) {
 
@@ -1044,8 +1060,6 @@ public class Toronto_Class extends Common_IntefacePOA{
 	 * @param eventType the event type
 	 * @param eventID   the event ID
 	 * @return the string
-	 * @throws InterruptedException the interrupted exception
-	 * @throws ExecutionException   the execution exception
 	 */
 	public void check_with_otw(String eventType, String eventID) {
 
@@ -1076,6 +1090,7 @@ public class Toronto_Class extends Common_IntefacePOA{
 	 * Availability mtl.
 	 *
 	 * @param eventType the event type
+	 * @param i         the i
 	 * @return the string
 	 * @throws InterruptedException the interrupted exception
 	 * @throws ExecutionException   the execution exception
@@ -1152,6 +1167,9 @@ public class Toronto_Class extends Common_IntefacePOA{
 		return result.get();
 	}
 	
+	/* (non-Javadoc)
+	 * @see _ServerPackage.Common_IntefaceOperations#swapEvent(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	 */
 	public String swapEvent(String customerID, String oldEventType, String oldEventID, String newEventType, String newEventID) {
 
 		if( !( oldEventID.substring(0, 3).equalsIgnoreCase("OTW") || oldEventID.substring(0, 3).equalsIgnoreCase("TOR") || oldEventID.substring(0, 3).equalsIgnoreCase("MTL") || newEventID.substring(0, 3).equalsIgnoreCase("OTW") || newEventID.substring(0, 3).equalsIgnoreCase("MTL") || newEventID.substring(0, 3).equalsIgnoreCase("TOR") ) ) {
